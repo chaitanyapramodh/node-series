@@ -1,10 +1,10 @@
 const collection=require('../model/setupDB')
 
 let seriesData=[
-    {name:"Game Of Thrones",seasons:8,characters:["Khaleesi,Ned Stark, Arya Stark"],running:false,rating:9.1},
-    {name:"Brooklyn 99",seasons:7,characters:["Ames,Jakey, Rosa,charles"],running:true,rating:9.4},
-    {name:"White COllar",seasons:6,characters:["Neil,Peter, moz,EL"],running:false,rating:9.3},
-    {name:"Burn Notice",seasons:6,characters:["Mike,sam,fiona"],running:false,rating:9.2},
+    {id:1,name:"Game Of Thrones",seasons:8,characters:["Khaleesi,Ned Stark, Arya Stark"],running:false,rating:9.1},
+    {id:2,name:"Brooklyn 99",seasons:7,characters:["Ames,Jakey, Rosa,charles"],running:true,rating:9.4},
+    {id:3,name:"White COllar",seasons:6,characters:["Neil,Peter, moz,EL"],running:false,rating:9.3},
+    {id:4,name:"Burn Notice",seasons:6,characters:["Mike,sam,fiona"],running:false,rating:9.2},
 ]
 
 exports.seriesSetup = () => {

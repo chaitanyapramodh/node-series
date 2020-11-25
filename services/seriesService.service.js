@@ -1,9 +1,10 @@
-const seriesDb=require('../utilities/setupSeries')
+const seriessetup=require('../utilities/setupSeries')
+const seriesDb=require('../utilities/series')
 
 const seriesservice={}
 
-seriesservice.insertseries=()=>{
-    return seriesDb.seriesSetup().then((data)=>{
+seriesservice.setupseries=()=>{
+    return seriessetup.seriesSetup().then((data)=>{
         if(data!=null){
             return data
         }
@@ -16,6 +17,39 @@ seriesservice.insertseries=()=>{
             throw err;
 
         }
+    })
+}
+
+seriesservice.insertseries=(data)=>{
+   return seriesDb.insertdata(data).then((res)=>{
+        if(res){
+            return res
+        }
+    })
+    .catch((err)=>{
+        throw err
+    })
+}
+
+seriesservice.getseries=(data)=>{
+    return seriesDb.getdata(data).then((res)=>{
+        if(res){
+            return res
+        }
+    })
+    .catch((err)=>{
+        throw err
+    })
+}
+
+seriesservice.updateseries=(id,data)=>{
+    return seriesDb.updateData(id,data).then((res)=>{
+        if(res){
+            return res
+        }
+    })
+    .catch((err)=>{
+        throw err
     })
 }
 

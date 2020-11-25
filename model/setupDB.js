@@ -8,7 +8,11 @@ mongoose.connect(url, { useNewUrlParser: true , useUnifiedTopology: true })
     })
 
 const seriesSchema=new mongoose.Schema(
-    {
+    {   
+        id:{
+            type:Number,
+            required:true
+        },
         name:{
             type:String,
             required:true
@@ -42,5 +46,6 @@ collection.getSeriesCollection = () => {
         throw err;
     } )
 }
+
 
 module.exports=collection
