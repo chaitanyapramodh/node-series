@@ -1,0 +1,11 @@
+var mongo=require("mongoose");
+var url = "mongodb://localhost:27017/dbname";
+var schema=mongo.Schema
+mongoose.connect(url, { useNewUrlParser: true , useUnifiedTopology: true })
+    .catch((error) => {
+        let err = new Error("Could not connect to Database")
+        err.status = 500;
+        throw err;
+    })
+
+var userSchema=new schema({write schema variables here},{collection name here})
