@@ -1,1 +1,6 @@
+  //writing a cookie, after app.use(cookeparser())
   res.cookie("key",value)
+  
+//reading a cookie
+
+const {cookie}=req
