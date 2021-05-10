@@ -1,0 +1,19 @@
+//create a invalid route in every route.js file which will throw error
+// invalid route
+router.use('*',(req,res,next)=>{
+  var error=new Error("Invalid path")
+  error.status=404;
+  next(error)
+  
+})
+
+//in app.js or server.js create a error handler function like
+
+app.use((error,req,res,next)=>{
+  res.status(error.status||500);
+   res.json({
+     error:{
+      message:error.message
+    }
+   });
+})
