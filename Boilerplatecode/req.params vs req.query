@@ -1,0 +1,24 @@
+//when you want to send only one value that in url you can use params and url will look like
+
+http://localhost:4442/books//bookDetails/44
+
+// in app.js
+
+router.get('/bookDetails/:bookid', (req, res,next) => {
+    var bookid=req.params.bookid
+    res.status(200).json(bookid);
+
+});
+
+
+//when you want to send more than one value in url you can use query and url wil look like 
+
+http://localhost:4442/books//bookDetails/?id=44
+
+//in app.js
+
+router.get('/bookDetails/', (req, res,next) => {
+    var bookid=req.query.id
+    res.status(200).json(bookid);
+
+});
